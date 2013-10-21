@@ -12,12 +12,17 @@
     "https://*/*"
   ],
     
-  "background": {
-     "scripts": [ 
-         "controller.js"
-     ],
-     "persistent": true
-  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],  
+      "js": ["annyang.js", "interpreter.js"]
+    }
+  ],
+    
+//  "background": {
+//     "page": "background.html",
+//     "persistent": true
+//  },
     
   "browser_action": {
     "default_icon": "icon.png",
