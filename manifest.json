@@ -14,7 +14,7 @@
     
   "content_scripts": [
     {
-      "matches": ["https://*/*"],  
+      "matches": ["https://www.google.com/*"],  
       "js": ["annyang.js", "interpreter.js"]
     }
   ],

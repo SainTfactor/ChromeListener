@@ -1,6 +1,6 @@
-alert("1");
+//alert("1");
 if (annyang) {
-  alert("2");    
+  //alert("2");    
   // Let's define a command.    
   var commands = {
     'hello': function() { alert("hello"); },
@@ -11,7 +11,36 @@ if (annyang) {
             window.open('https://' + tag);
         else
             window.open('https://' + tag + '.com');
-      }   
+      },
+    'chrome search *search for *thing': 
+      function(tag, tag2) {      
+          
+        //for posterity
+        //$("input[class*=search]").text("" + tag2);
+          
+        theUrl = '';  
+        if(tag.indexOf('.') >= 0)
+        {
+            theUrl = 'https://' + tag;            
+        }
+        else
+        {
+            theUrl = 'https://' + tag + '.com';            
+        }
+          
+        if(tag.toLowerCase().indexOf('youtube') != -1)
+        {
+            theUrl += '/results?search_query=' + tag2
+            window.open(theUrl);
+        }
+          
+        if(tag.toLowerCase().indexOf('google') != -1)
+        {
+            theUrl += '/#q=' + tag2
+            window.open(theUrl);
+        }
+          
+      }      
   };
   //alert("3");  
 
